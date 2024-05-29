@@ -1,0 +1,142 @@
+@prefix BDM: <http://www.example.edu/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+
+BDM:program a rdfs:Class ;
+    BDM:from_uni BDM:university ;
+    BDM:recommends BDM:program .
+
+BDM:review a rdfs:Class ;
+    BDM:opinion_of BDM:program .
+
+BDM:scholarship a rdfs:Class ;
+    BDM:eligible_for BDM:program .
+
+BDM:university a rdfs:Class .
+
+BDM:user a rdfs:Class ;
+    BDM:writes BDM:review .
+
+BDM:academic_perf a rdf:Property ;
+    rdfs:domain BDM:scholarship .
+
+BDM:amount a rdf:Property ;
+    rdfs:domain BDM:scholarship .
+
+BDM:ap_date a rdf:Property ;
+    rdfs:domain BDM:program .
+
+BDM:award_name a rdf:Property ;
+    rdfs:domain BDM:scholarship .
+
+BDM:bachelor rdfs:subClassOf BDM:program .
+
+BDM:bachelor_needed a rdf:Property ;
+    rdfs:domain BDM:program,
+        BDM:scholarship .
+
+BDM:comment a rdf:Property ;
+    rdfs:domain BDM:review .
+
+BDM:date a rdf:Property ;
+    rdfs:domain BDM:review .
+
+BDM:deadline a rdf:Property ;
+    rdfs:domain BDM:scholarship .
+
+BDM:desciption a rdf:Property .
+
+BDM:description rdfs:domain BDM:program .
+
+BDM:duration a rdf:Property ;
+    rdfs:domain BDM:program .
+
+BDM:eligible_for a rdf:Property ;
+    rdfs:domain BDM:scholarship ;
+    rdfs:range BDM:program .
+
+BDM:email a rdf:Property ;
+    rdfs:domain BDM:user .
+
+BDM:eng_lvl a rdf:Property ;
+    rdfs:domain BDM:program,
+        BDM:scholarship .
+
+BDM:feedback a rdf:Property ;
+    rdfs:domain BDM:review .
+
+BDM:from_uni a rdf:Property ;
+    rdfs:domain BDM:program ;
+    rdfs:range BDM:university .
+
+BDM:location a rdf:Property ;
+    rdfs:domain BDM:university .
+
+BDM:master rdfs:subClassOf BDM:program .
+
+BDM:max_age a rdf:Property ;
+    rdfs:domain BDM:scholarship .
+
+BDM:min_age a rdf:Property ;
+    rdfs:domain BDM:scholarship .
+
+BDM:name a rdf:Property ;
+    rdfs:domain BDM:university,
+        BDM:user .
+
+BDM:nationality a rdf:Property ;
+    rdfs:domain BDM:scholarship .
+
+BDM:num_awards a rdf:Property ;
+    rdfs:domain BDM:scholarship .
+
+BDM:opinion_of a rdf:Property ;
+    rdfs:domain BDM:review ;
+    rdfs:range BDM:program .
+
+BDM:program_ID a rdf:Property ;
+    rdfs:domain BDM:program .
+
+BDM:recommends a rdf:Property ;
+    rdfs:domain BDM:program ;
+    rdfs:range BDM:program .
+
+BDM:register_date a rdf:Property ;
+    rdfs:domain BDM:user .
+
+BDM:review_ID a rdf:Property ;
+    rdfs:domain BDM:review .
+
+BDM:sch_ID a rdf:Property ;
+    rdfs:domain BDM:scholarship .
+
+BDM:score a rdf:Property ;
+    rdfs:domain BDM:program,
+        BDM:scholarship .
+
+BDM:spa_lvl a rdf:Property ;
+    rdfs:domain BDM:program,
+        BDM:scholarship .
+
+BDM:st_date a rdf:Property ;
+    rdfs:domain BDM:program .
+
+BDM:title a rdf:Property ;
+    rdfs:domain BDM:program .
+
+BDM:topic a rdf:Property ;
+    rdfs:domain BDM:review .
+
+BDM:uni_ID a rdf:Property ;
+    rdfs:domain BDM:university .
+
+BDM:url a rdf:Property ;
+    rdfs:domain BDM:program .
+
+BDM:user_ID a rdf:Property ;
+    rdfs:domain BDM:user .
+
+BDM:writes a rdf:Property ;
+    rdfs:domain BDM:user ;
+    rdfs:range BDM:review .
+
